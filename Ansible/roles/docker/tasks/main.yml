@@ -1,18 +1,18 @@
 # tasks file for docker
-        - name: create image docker
-          docker_image:
-            name: appfront
-            build:
-             path: /var/lib/jenkins/workspace/cd_pipe
-             pull: no
-            source: build
-            state: present
-            force_source: true
-        - name: run container docker
-          docker_container:
-            name: myapp_container
-            image: appfront:latest
-            state: started
-            recreate: true
-            ports:
-             - "4200:80"
+- name: create image docker
+  docker_image:
+    name: devops
+    build:
+     path: /var/lib/jenkins/workspace/cd_pipe
+     pull: no
+    source: build
+    state: present
+    force_source: true
+- name: run container docker
+  docker_container:
+    name: myapp_container
+    image: devops:latest
+    state: started
+    recreate: true
+    ports:
+     - "4200:80"
