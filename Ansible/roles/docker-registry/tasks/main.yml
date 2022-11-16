@@ -8,7 +8,7 @@
     reauthorize: yes
 - name: docker push
   docker_image:
-    name: appfront:latest
+    name: devops:latest
     repository: amaniattia/devops
     push: yes
     source: local 
