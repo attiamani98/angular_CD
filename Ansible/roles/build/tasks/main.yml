@@ -1,5 +1,5 @@
 ---
 #buildproject
 - name : build app
-  shell: ng build --configuration production
+  shell: npm run ng build 
 
