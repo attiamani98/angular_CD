@@ -22,13 +22,7 @@ pipeline {
 	            }
 	        }
 		    
-		stage('python test'){
-	            steps{
-	                script{
-	                    sh "python3 --version"
-	                }
-	            }
-	        }
+		
 		    
 	        stage('Build'){
 	            steps{
@@ -37,10 +31,11 @@ pipeline {
 	                }
 	            }
 	            }
-	              stage('docker'){
+		    
+	         stage('docker'){
 		    steps{
 			script{
-			    sh "ansible-playbook Ansible/docker.yml -i Ansible/inventory/host.yml -e 'ansible_python_interpreter=/usr/bin/python3'"
+			    sh "ansible-playbook Ansible/docker.yml -i Ansible/inventory/host.yml"
 			}
 		    }
 		}
