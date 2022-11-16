@@ -1,5 +1,6 @@
 pipeline {
 	    agent any
+	    tools {nodejs "nodejs"}
 	    stages {
 	        stage ("Pull") {
 	            steps{
@@ -11,7 +12,8 @@ pipeline {
 	                }
 	            }
 	        }
-	     	
+	        
+	             	
 	        stage('npm install'){
 	            steps{
 	                script{
