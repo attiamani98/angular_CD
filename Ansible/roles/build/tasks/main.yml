@@ -1,4 +1,11 @@
 ---
-#buildproject
-                            - name : build app
-                              shell: ng build --configuration production
+# tasks file for buildDocker
+- name: install npm
+  apt: 
+   name: npm
+- name: running npm install
+  shell: npm install /var/lib/jenkins/workspace/cd_pipe
+#buid project
+- name: build app
+  shell: ng build --prod && chmod 777 -R /var/lib/jenkins/workspace/cd_pipe/dist/
+
