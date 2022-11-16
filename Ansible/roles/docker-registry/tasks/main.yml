@@ -9,6 +9,6 @@
 - name: docker push
   docker_image:
     name: devops:latest
-    repository: amaniattia/devops:latest
+    repository: amaniattia/devops
     push: yes
     source: local 
